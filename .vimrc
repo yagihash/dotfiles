@@ -19,6 +19,7 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'Yggdroot/indentLine'
 
 call neobundle#end()
+NeoBundleCheck
 
 " restore cursor location
 autocmd BufReadPost *
