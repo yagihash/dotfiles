@@ -78,7 +78,7 @@ alias watch="watch -d=cumulative"
 alias traceroute="sudo traceroute -I -n -w 1"
 alias vi="vim"
 alias mysql="mysql --pager=less"
-alias ip="curl ipinfo.io"
+alias gip="curl ipinfo.io"
 case ${OSTYPE} in
   darwin*)
   alias ls="ls -FG -h"
