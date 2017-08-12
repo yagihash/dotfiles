@@ -11,12 +11,13 @@ NeoBundle 'dracula/vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'mattn/emmet-vim'
-NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'cohama/lexima.vim'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'itchyny/vim-gitbranch'
 NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'fatih/vim-go'
 
 call neobundle#end()
 NeoBundleCheck
@@ -76,9 +77,9 @@ set shiftwidth=2
 set autoindent
 set expandtab
 
-autocmd FileType python setl autoindent
-autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
+filetype plugin on
+autocmd BufRead,BufNewFile *.py setfiletype python
+autocmd BufRead,BufNewFile *.go setfiletype go
 
 syntax on
 colorscheme dracula
