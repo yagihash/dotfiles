@@ -47,6 +47,9 @@ let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
 
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,doc,mac
 set paste
 set backspace=start,eol,indent
 set whichwrap=b,s,[,],<,>,~
