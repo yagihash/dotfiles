@@ -48,7 +48,8 @@ let g:lightline = {
       \ }
 
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fenc=utf-8
+set fencs=iso-2022-jp,euc-jp,sjis,utf-8
 set paste
 set backspace=start,eol,indent
 set whichwrap=b,s,[,],<,>,~
