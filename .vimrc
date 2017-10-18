@@ -18,6 +18,7 @@ NeoBundle 'itchyny/vim-gitbranch'
 NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'fatih/vim-go'
+NeoBundle 'othree/yajs.vim'
 
 call neobundle#end()
 NeoBundleCheck
@@ -27,6 +28,7 @@ autocmd BufReadPost *
 \ if line("'\"") > 0 && line ("'\"") <= line("$") |
 \   exe "normal! g'\"" |
 \ endif
+autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 
 " show branch on lightline
 let g:lightline = {
@@ -49,7 +51,6 @@ let g:lightline = {
 
 set encoding=utf-8
 set fenc=utf-8
-set fencs=iso-2022-jp,euc-jp,sjis,utf-8
 set paste
 set backspace=start,eol,indent
 set whichwrap=b,s,[,],<,>,~
