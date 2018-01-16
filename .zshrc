@@ -51,9 +51,9 @@ case ${UID} in
 esac
 
 # history management settings
-HISTFILE=~/.zsh_history
-HISTSISE=100000
-SAVEHIST=100000
+export HISTFILE=~/.zsh_history
+export HISTSISE=1000
+export SAVEHIST=100000
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
