@@ -90,3 +90,4 @@ colorscheme dracula
 highlight CursorLine ctermfg=none ctermbg=52 cterm=none
 highlight Comment ctermfg=156 ctermbg=none
 
+inoremap <C-c> <esc>
