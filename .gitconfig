@@ -1,0 +1,19 @@
+[user]
+	name = Yu YAGIHASHI
+  email = yagihashoooooo@gmail.com
+[core]
+	pager = less -cmR
+	excludesfile = /Users/yagihash/.gitignore_global
+  editor = vim
+[color]
+  ui = auto
+[push]
+  defualt = current
+[branch]
+  autosetuprebase = always
+[merge]
+  ff = false
+[pull]
+  rebase = true
+[diff]
+	colorMoved = zebra
