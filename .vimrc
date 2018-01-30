@@ -19,6 +19,7 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'othree/yajs.vim'
+NeoBundle 'posva/vim-vue'
 
 call neobundle#end()
 NeoBundleCheck
