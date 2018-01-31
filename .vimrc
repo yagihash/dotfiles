@@ -50,6 +50,9 @@ let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
 
+" to avoid slow-down caused by vim-vue
+let g:vue_disable_pre_processors=1
+
 set encoding=utf-8
 set fenc=utf-8
 set paste
