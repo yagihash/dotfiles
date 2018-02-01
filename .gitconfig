@@ -1,9 +1,9 @@
 [user]
-	name = Yu YAGIHASHI
+  name = Yu YAGIHASHI
   email = yagihashoooooo@gmail.com
 [core]
-	pager = less -cmR
-	excludesfile = /Users/yagihash/.gitignore_global
+  pager = less -cmR
+  excludesfile = /Users/yagihash/.gitignore_global
   editor = vim
 [color]
   ui = auto
