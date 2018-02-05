@@ -53,6 +53,9 @@ let g:lightline = {
 " to avoid slow-down caused by vim-vue
 let g:vue_disable_pre_processors=1
 
+" supress error messages for vim-go
+let g:go_version_warning = 0
+
 set encoding=utf-8
 set fenc=utf-8
 set paste
