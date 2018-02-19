@@ -1,0 +1,36 @@
+[[plugins]]
+NeoBundle 'dracula/vim'
+
+[[plugins]]
+NeoBundle 'mattn/emmet-vim'
+on_ft = ['html', 'twig', 'php']
+
+[[plugins]]
+NeoBundle 'cohama/lexima.vim'
+
+[[plugins]]
+NeoBundle 'tpope/vim-endwise'
+
+[[plugins]]
+NeoBundle 'itchyny/lightline.vim'
+
+[[plugins]]
+NeoBundle 'itchyny/vim-gitbranch'
+
+[[plugins]]
+NeoBundle 'bronson/vim-trailing-whitespace'
+
+[[plugins]]
+NeoBundle 'Yggdroot/indentLine'
+
+[[plugins]]
+NeoBundle 'fatih/vim-go'
+on_ft = ['go']
+
+[[plugins]]
+NeoBundle 'othree/yajs.vim'
+on_ft = ['js', 'pac', 'html', 'twig', 'php']
+
+[[plugins]]
+NeoBundle 'posva/vim-vue'
+on_ft = ['vue']
