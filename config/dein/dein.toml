@@ -1,36 +1,36 @@
 [[plugins]]
-NeoBundle 'dracula/vim'
+repo = 'dracula/vim'
 
 [[plugins]]
-NeoBundle 'mattn/emmet-vim'
+repo = 'mattn/emmet-vim'
 on_ft = ['html', 'twig', 'php']
 
 [[plugins]]
-NeoBundle 'cohama/lexima.vim'
+repo = 'cohama/lexima.vim'
 
 [[plugins]]
-NeoBundle 'tpope/vim-endwise'
+repo = 'tpope/vim-endwise'
 
 [[plugins]]
-NeoBundle 'itchyny/lightline.vim'
+repo = 'itchyny/lightline.vim'
 
 [[plugins]]
-NeoBundle 'itchyny/vim-gitbranch'
+repo = 'itchyny/vim-gitbranch'
 
 [[plugins]]
-NeoBundle 'bronson/vim-trailing-whitespace'
+repo = 'bronson/vim-trailing-whitespace'
 
 [[plugins]]
-NeoBundle 'Yggdroot/indentLine'
+repo = 'Yggdroot/indentLine'
 
 [[plugins]]
-NeoBundle 'fatih/vim-go'
+repo = 'fatih/vim-go'
 on_ft = ['go']
 
 [[plugins]]
-NeoBundle 'othree/yajs.vim'
+repo = 'othree/yajs.vim'
 on_ft = ['js', 'pac', 'html', 'twig', 'php']
 
 [[plugins]]
-NeoBundle 'posva/vim-vue'
+repo = 'posva/vim-vue'
 on_ft = ['vue']
