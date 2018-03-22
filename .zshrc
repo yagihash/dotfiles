@@ -32,21 +32,41 @@ setopt complete_aliases     # show aliases for completions
 setopt no_beep              # never beep
 setopt nolistbeep           # shut up babe
 
+# for displaying git info on prompt
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' formats "[%F{green}%c%u%b%f / %r]"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}"
+zstyle ':vcs_info:git:*' untrackedstr "%F{red}"
+precmd() {
+  print
+  local left='(%{\e[38;5;2m%}%~%{\e[m%})'
+  vcs_info
+  local right="${vcs_info_msg_0_}"
+  local invisible='%([BSUbfksu]|([FK]|){*})'
+  local leftwidth=${#${(S%%)left//$~invisible/}}
+  local rightwidth=${#${(S%%)right//$~invisible/}}
+  local padwidth=$(($COLUMNS - ($leftwidth + $rightwidth) % $COLUMNS))
+  print -P $left${(r:$padwidth:: :)}$right
+}
+
 # set prompts
 autoload colors
 colors
-RPROMPT="`hostname`:%~"
+RPROMPT=`hostname`
 SPROMPT="%r ? [n,y,a,e]: "
 case ${UID} in
   0)
-  PROMPT="%{${fg[magenta]}%}%n:%1-%(!.#.$)%{${reset_color}%} "
+  PROMPT="%{${fg[magenta]}%}%n%{${reset_color}%}:%1-%(!.#.$) "
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-  PROMPT="%{${fg[red]}%}%n:%1-%(!.#.$)%{${reset_color}%} "
+  PROMPT="%{${fg[red]}%}%n%{${reset_color}%}:%1-%(!.#.$) "
   ;;
   *)
-  PROMPT="%{${fg[yellow]}%}%n:%1-%(!.#.$)%{${reset_color}%} "
+  PROMPT="%{${fg[yellow]}%}%n%{${reset_color}%}:%1-%(!.#.$) "
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-  PROMPT="%{${fg[blue]}%}%n:%1-%(!.#.$)%{${reset_color}%} "
+  PROMPT="%{${fg[blue]}%}%n%{${reset_color}%}:%1-%(!.#.$) "
   ;;
 esac
 
