@@ -76,7 +76,6 @@ set novisualbell
 set laststatus=2
 set statusline=%F%r%h%=
 set number
-set cursorline
 set incsearch
 set ignorecase
 set wrapscan
