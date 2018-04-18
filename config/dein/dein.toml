@@ -1,5 +1,5 @@
 [[plugins]]
-repo = 'dracula/vim'
+repo = 'itchyny/landscape.vim'
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
@@ -34,3 +34,6 @@ on_ft = ['js', 'pac', 'html', 'twig', 'php']
 [[plugins]]
 repo = 'posva/vim-vue'
 on_ft = ['vue']
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'

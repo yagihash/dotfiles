@@ -25,19 +25,19 @@ if dein#load_state(s:dein_dir)
   call dein#save_state()
 endif
 
-filetype plugin indent on
-syntax enable
-
 " If you want to install not installed plugins on startup.
-if dein#check_install()
+if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
 
+filetype plugin indent on
+syntax enable
+
 " restore cursor location
 autocmd BufReadPost *
-\ if line("'\"") > 0 && line ("'\"") <= line("$") |
-\   exe "normal! g'\"" |
-\ endif
+      \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+      \   exe "normal! g'\"" |
+      \ endif
 autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 
 " show branch on lightline
@@ -47,7 +47,7 @@ let g:lightline = {
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'gitbranch#name'
+      \   'gitbranch': 'fugitive#head'
       \ },
       \ }
 
@@ -56,7 +56,7 @@ autocmd BufWritePre * :FixWhitespace
 
 " for lightline
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'landscape',
       \ }
 
 " to avoid slow-down caused by vim-vue
@@ -100,8 +100,7 @@ filetype plugin on
 autocmd BufRead,BufNewFile *.py setfiletype python
 autocmd BufRead,BufNewFile *.go setfiletype go
 
-syntax on
-colorscheme dracula
+colorscheme landscape
 highlight CursorLine ctermfg=none ctermbg=52 cterm=none
 highlight Comment ctermfg=156 ctermbg=none
 
