@@ -155,6 +155,24 @@ bindkey '^U' backward-kill-line
 # load local settings
 source ~/.zshrc.mine
 
+# configucation for developing environment
+export PATH=$PATH:$HOME/.composer/vendor/bin
+
+if [ -x "`which peco`" ]; then
+  function peco-history-selection() {
+    BUFFER=`tail -r -1000 ~/.zsh_history | perl -pe 's/^: [0-9]+\:0;//g' | peco`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+  }
+  zle -N peco-history-selection
+  bindkey '^R' peco-history-selection
+
+  if [ -x "`which ghq`" ]; then
+    alias g='cd $(ghq root)/$(ghq list | peco)'
+    alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
+  fi
+fi
+
 # for zprof
 ## Add line below to ~/.zshenv
 ## zmodload zsh/zprof && zprof
