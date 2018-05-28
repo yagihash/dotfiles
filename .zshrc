@@ -161,7 +161,7 @@ export PATH=$PATH:$HOME/.composer/vendor/bin
 DIRSTACKSIZE=100
 setopt auto_pushd
 
-if [ -x "`which peco`" ]; then
+if [ -x "`which peco 2>/dev/null`" ]; then
   function peco-history-selection() {
     BUFFER=`tail -r -1000 ~/.zsh_history | perl -pe 's/^: [0-9]+\:0;//g' | peco`
     CURSOR=$#BUFFER
@@ -179,7 +179,7 @@ if [ -x "`which peco`" ]; then
   zle -N peco-pushd-selection
   bindkey '^B' peco-pushd-selection
 
-  if [ -x "`which ghq`" ]; then
+  if [ -x "`which ghq 2>/dev/null`" ]; then
     alias g='cd $(ghq root)/$(ghq list | peco)'
     alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
   fi
