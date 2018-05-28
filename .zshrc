@@ -72,7 +72,7 @@ esac
 
 # history management settings
 export HISTFILE=~/.zsh_history
-export HISTSISE=1000
+export HISTSIZE=1000
 export SAVEHIST=100000
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
@@ -163,11 +163,7 @@ setopt auto_pushd
 
 if [ -x "`which peco 2>/dev/null`" ]; then
   function peco-history-selection() {
-    if [ -x "`which tac 2>/dev/null`" ]; then
-      BUFFER=`tail -1000 ~/.zsh_history | tac | perl -pe 's/^: [0-9]+\:0;//g' | awk -e '!a[$0]++' | peco`
-    else
-      BUFFER=`tail -r -1000 ~/.zsh_history | perl -pe 's/^: [0-9]+\:0;//g' | awk -e '!a[$0]++' | peco`
-    fi
+    BUFFER="$(history -nr 1 | awk '!a[$0]++' | peco --query "$LBUFFER" | sed 's/\\n/\n/')"
     CURSOR=$#BUFFER
     zle reset-prompt
   }
