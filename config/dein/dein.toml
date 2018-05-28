@@ -37,3 +37,7 @@ on_ft = ['vue']
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
