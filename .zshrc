@@ -158,6 +158,9 @@ source ~/.zshrc.mine
 # configucation for developing environment
 export PATH=$PATH:$HOME/.composer/vendor/bin
 
+DIRSTACKSIZE=100
+setopt auto_pushd
+
 if [ -x "`which peco`" ]; then
   function peco-history-selection() {
     BUFFER=`tail -r -1000 ~/.zsh_history | perl -pe 's/^: [0-9]+\:0;//g' | peco`
@@ -166,6 +169,15 @@ if [ -x "`which peco`" ]; then
   }
   zle -N peco-history-selection
   bindkey '^R' peco-history-selection
+
+  function peco-pushd-selection() {
+    local pushd_number=$(dirs -v | peco | perl -anE 'say $F[0]')
+    [[ -z $pushd_number ]] && return 1
+    pushd +$pushd_number
+    return $?
+  }
+  zle -N peco-pushd-selection
+  bindkey '^B' peco-pushd-selection
 
   if [ -x "`which ghq`" ]; then
     alias g='cd $(ghq root)/$(ghq list | peco)'
