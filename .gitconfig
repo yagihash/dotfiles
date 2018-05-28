@@ -17,3 +17,5 @@
   rebase = true
 [diff]
   colorMoved = zebra
+[ghq]
+	root = /Users/yagihash/ghq
