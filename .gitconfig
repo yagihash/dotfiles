@@ -17,5 +17,12 @@
   rebase = true
 [diff]
   colorMoved = zebra
+[url "git@github.com:"]
+  pushInsteadOf = git://github.com/
+  pushInsteadOf = https://github.com/
+[url "git@github.com:"]
+  insteadOf = git://github.com/
+  insteadOf = https://github.com/
 [ghq]
-	root = /Users/yagihash/ghq
+	root = ~/ghq
+  root = ~/go/src
