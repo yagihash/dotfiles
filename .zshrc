@@ -2,7 +2,7 @@
 export LANG="ja_JP.UTF-8"
 export EDITOR="vim"
 export PAGER="less"
-export LESS="-iMS"
+export LESS="-iMS -R"
 
 # to use ^A, ^E
 bindkey -e
