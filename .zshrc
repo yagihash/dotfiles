@@ -179,6 +179,8 @@ if [ -x "`which peco 2>/dev/null`" ]; then
   zle -N peco-pushd-selection
   bindkey '^B' peco-pushd-selection
 
+  alias gd='git diff `git log --oneline | peco | cut -d " " -f 1`'
+
   if [ -x "`which ghq 2>/dev/null`" ]; then
     alias g='cd $(ghq root)/$(ghq list | peco)'
     alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
