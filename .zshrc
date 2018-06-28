@@ -182,7 +182,8 @@ if [ -x "`which peco 2>/dev/null`" ]; then
   alias gd='git diff `git log --oneline | peco | cut -d " " -f 1`'
 
   if [ -x "`which ghq 2>/dev/null`" ]; then
-    alias g='cd $(ghq root)/$(ghq list | peco)'
+    alias gg='cd $GOPATH/src/$(ghq list --full-path | grep $GOPATH | cut -d "/" -f 6,7,8 | peco)'
+    alias g='cd $(ghq root)/$(ghq list --full-path | grep -v $GOPATH | cut -d "/" -f 5,6,7 | peco)'
     alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
   fi
 fi
