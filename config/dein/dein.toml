@@ -41,3 +41,10 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
 
+[[plugins]]
+repo = 'jparise/vim-graphql'
+on_ft = ['graphql', 'graphqls', '.gql']
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
