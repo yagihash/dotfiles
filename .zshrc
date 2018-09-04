@@ -173,7 +173,7 @@ if [ -x "`which peco 2>/dev/null`" ]; then
   function peco-pushd-selection() {
     local pushd_number=$(dirs -v | peco | perl -anE 'say $F[0]')
     [[ -z $pushd_number ]] && return 1
-    pushd +$pushd_number
+    pushd +$pushd_number > /dev/null
     return $?
   }
   zle -N peco-pushd-selection
