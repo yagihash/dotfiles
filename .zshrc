@@ -40,7 +40,7 @@ zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' stagedstr "%F{yellow}"
 zstyle ':vcs_info:git:*' unstagedstr "%F{red}"
 zstyle ':vcs_info:git:*' untrackedstr "%F{red}"
-precmd() {
+print_cwd() {
   print
   local left='(%{\e[38;5;2m%}%~%{\e[m%})'
   vcs_info
@@ -51,6 +51,8 @@ precmd() {
   local padwidth=$(($COLUMNS - ($leftwidth + $rightwidth) % $COLUMNS))
   print -P $left${(r:$padwidth:: :)}$right
 }
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd print_cwd
 
 # set prompts
 autoload colors
@@ -107,9 +109,6 @@ case ${OSTYPE} in
   alias ls="ls -F -h --color=auto"
   ;;
 esac
-
-# setting functions
-# function chpwd() { ls }
 
 # bind function to brank return
 function my_enter {
