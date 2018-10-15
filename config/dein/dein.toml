@@ -48,3 +48,7 @@ on_ft = ['graphql', 'graphqls', '.gql']
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['ts', 'tsx']
