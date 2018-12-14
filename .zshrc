@@ -179,13 +179,14 @@ if [ -x "`which peco 2>/dev/null`" ]; then
   bindkey '^B' peco-pushd-selection
 
   function peco-cd() {
-    list=$(find . -maxdepth 1 -mindepth 1 -type d -exec basename {} \;)
+    maxdepth=$1
+    list=$(find . -maxdepth ${maxdepth:-1} -mindepth 1 -type d)
     if [ -z ${list} ]; then
       echo 'No directory' >&2
       return 1
     fi
 
-    dst=$(echo ${list} | sort | peco)
+    dst=$(echo ${list} | perl -pe 's/^\.\///g' | sort | peco)
     if [ ${dst} ]; then
       cd $dst
     fi
