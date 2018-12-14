@@ -180,6 +180,7 @@ if [ -x "`which peco 2>/dev/null`" ]; then
 
   alias gd='git diff $(git log --oneline | peco | cut -d " " -f 1)'
   alias gc='git checkout $(git --no-pager branch | peco)'
+  alias d='cd $(find . -maxdepth 1 -mindepth 1 -type d -exec basename {} \; | sort | peco)'
 
   if [ -x "`which ghq 2>/dev/null`" ]; then
     alias gg='cd $GOPATH/src/$(ghq list --full-path | grep $GOPATH | cut -d "/" -f 6,7,8 | peco)'
