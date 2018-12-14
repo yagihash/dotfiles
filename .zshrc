@@ -178,9 +178,22 @@ if [ -x "`which peco 2>/dev/null`" ]; then
   zle -N peco-pushd-selection
   bindkey '^B' peco-pushd-selection
 
+  function peco-cd() {
+    list=$(find . -maxdepth 1 -mindepth 1 -type d -exec basename {} \;)
+    if [ -z ${list} ]; then
+      echo 'No directory' >&2
+      return 1
+    fi
+
+    dst=$(echo ${list} | sort | peco)
+    if [ ${dst} ]; then
+      cd $dst
+    fi
+  }
+  alias d='peco-cd'
+
   alias gd='git diff $(git log --oneline | peco | cut -d " " -f 1)'
   alias gc='git checkout $(git --no-pager branch | peco)'
-  alias d='cd $(find . -maxdepth 1 -mindepth 1 -type d -exec basename {} \; | sort | peco)'
 
   if [ -x "`which ghq 2>/dev/null`" ]; then
     alias gg='cd $GOPATH/src/$(ghq list --full-path | grep $GOPATH | cut -d "/" -f 6,7,8 | peco)'
