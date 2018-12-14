@@ -3,6 +3,7 @@ export LANG="ja_JP.UTF-8"
 export EDITOR="vim"
 export PAGER="less"
 export LESS="-iMS -R"
+export GOPATH="~/go"
 
 # to use ^A, ^E
 bindkey -e
