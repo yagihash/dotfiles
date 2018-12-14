@@ -194,12 +194,24 @@ if [ -x "`which peco 2>/dev/null`" ]; then
   }
   alias d='peco-cd'
 
-  alias gd='git diff $(git log --oneline | peco | cut -d " " -f 1)'
   alias gc='git checkout $(git --no-pager branch | peco)'
 
   if [ -x "`which ghq 2>/dev/null`" ]; then
-    alias gg='cd $GOPATH/src/$(ghq list --full-path | grep $GOPATH | cut -d "/" -f 6,7,8 | peco)'
-    alias g='cd $(ghq root)/$(ghq list --full-path | grep -v $GOPATH | cut -d "/" -f 5,6,7 | peco)'
+    function gg() {
+      dst=$(ghq list --full-path | grep $GOPATH | cut -d "/" -f 6,7,8 | peco)
+      if [ ${dst} ]; then
+        cd $GOPATH/src/$dst
+      fi
+    }
+    # alias gg='cd $GOPATH/src/$(ghq list --full-path | grep $GOPATH | cut -d "/" -f 6,7,8 | peco)'
+
+    function g() {
+      dst=$(ghq list --full-path | grep -v $GOPATH | cut -d "/" -f 5,6,7 | peco)
+      if [ ${dst} ]; then
+        cd $(ghq root)/$dst
+      fi
+    }
+
     alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
   fi
 fi
