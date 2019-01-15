@@ -1,4 +1,8 @@
-git clone https://github.com/yagihashoo/dotfiles.git ~/dotfiles
+if [ -d ~/dotfiles ]; then
+  echo 'Skip cloning repository'
+else
+  git clone https://github.com/yagihashoo/dotfiles.git ~/dotfiles
+fi
 
 if [ $? = 0 ]; then
   for f in `find ~/dotfiles -maxdepth 1 -name ".*" | grep -v '.git$' | grep -v '.gitignore$'`
