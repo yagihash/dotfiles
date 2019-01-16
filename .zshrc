@@ -58,7 +58,7 @@ add-zsh-hook precmd print_cwd
 # set prompts
 autoload colors
 colors
-RPROMPT=`hostname`
+RPROMPT="%F{green}`LANG=C date "+%m/%d(%a) %H:%m:%S"`%f"
 SPROMPT="%r ? [n,y,a,e]: "
 case ${UID} in
   0)
