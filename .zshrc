@@ -203,7 +203,6 @@ if [ -x "`which peco 2>/dev/null`" ]; then
         cd $GOPATH/src/$dst
       fi
     }
-    # alias gg='cd $GOPATH/src/$(ghq list --full-path | grep $GOPATH | cut -d "/" -f 6,7,8 | peco)'
 
     function g() {
       dst=$(ghq list --full-path | grep -v $GOPATH | cut -d "/" -f 5,6,7 | peco)
