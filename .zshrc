@@ -58,7 +58,7 @@ add-zsh-hook precmd print_cwd
 # set prompts
 autoload colors
 colors
-RPROMPT="%F{green}`LANG=C date "+%m/%d(%a) %H:%m:%S"`%f"
+RPROMPT="%F{green}%D{%m/%d} %*%f"
 SPROMPT="%r ? [n,y,a,e]: "
 case ${UID} in
   0)
