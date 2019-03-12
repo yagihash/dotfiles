@@ -4,6 +4,7 @@ export EDITOR="vim"
 export PAGER="less"
 export LESS="-iMS -R"
 export GOPATH="~/go"
+export PYTHONSTARTUP="$HOME/.pythonrc.py"
 
 # to use ^A, ^E
 bindkey -e
