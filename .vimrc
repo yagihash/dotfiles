@@ -98,6 +98,7 @@ set expandtab
 
 filetype plugin on
 autocmd BufRead,BufNewFile *.py setfiletype python
+autocmd BufNewFile *.py 0r $HOME/.vim/template/python.txt
 autocmd BufRead,BufNewFile *.go setfiletype go
 
 colorscheme landscape
