@@ -64,6 +64,7 @@ let g:vue_disable_pre_processors=1
 
 " supress error messages for vim-go
 let g:go_version_warning = 0
+let g:go_fmt_command = "goimports"
 
 set encoding=utf-8
 set fenc=utf-8
