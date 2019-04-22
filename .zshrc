@@ -159,6 +159,7 @@ source ~/.zshrc.mine
 
 # configucation for developing environment
 export PATH=$PATH:$HOME/.composer/vendor/bin
+export PATH=$PATH:./node_modules/.bin
 
 DIRSTACKSIZE=100
 setopt auto_pushd
