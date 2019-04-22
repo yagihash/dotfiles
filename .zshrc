@@ -14,6 +14,11 @@ autoload -U compinit; compinit -C
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export LS_COLORS="di=36:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30"
 zstyle ":completion:*" list-colors "di=36" "ln=35" "so=32" "ex=31" "bd=46;34" "cd=43;34"
+if [ -x "`which completions-yarn 2>/dev/null`" ]; then
+  # tabtab source for yarn package
+  # uninstall by removing these lines or running `tabtab uninstall yarn`
+  [[ -f /Users/yagihash/.anyenv/envs/ndenv/versions/v11.7.0/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zsh ]] && . /Users/yagihash/.anyenv/envs/ndenv/versions/v11.7.0/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zsh
+fi
 
 # word delimiter settings
 autoload -U select-word-style; select-word-style default
@@ -244,3 +249,4 @@ fi
 # if (which zprof > /dev/null) ;then
 #   zprof | less
 # fi
+
