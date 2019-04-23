@@ -109,6 +109,8 @@ alias vi="vim"
 alias mysql="mysql --pager=less"
 alias gip="curl ipinfo.io"
 alias wd="git diff --word-diff-regex=$'[^\x80-\xbf][\x80-\xbf]*' --word-diff=color"
+alias rm="rm -i"
+alias mv="mv -i"
 case ${OSTYPE} in
   darwin*)
   alias ls="ls -FG -h"
