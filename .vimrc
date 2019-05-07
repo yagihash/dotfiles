@@ -108,3 +108,8 @@ highlight CursorLine ctermfg=none ctermbg=52 cterm=none
 highlight Comment ctermfg=156 ctermbg=none
 
 inoremap <C-c> <esc>
+
+set autoread
+au CursorMoved * checktime
+au InsertEnter * checktime
+
