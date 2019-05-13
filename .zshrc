@@ -187,7 +187,7 @@ if [ -x "`which peco 2>/dev/null`" ]; then
     return $?
   }
   zle -N peco-pushd-selection
-  bindkey '^B' peco-pushd-selection
+  bindkey '^h' peco-pushd-selection
 
   function peco-cd() {
     maxdepth=$1
