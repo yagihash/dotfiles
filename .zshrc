@@ -3,7 +3,7 @@ export LANG="ja_JP.UTF-8"
 export EDITOR="vim"
 export PAGER="less"
 export LESS="-iMS -R"
-export GOPATH="~/go"
+export GOPATH="~/go:~/ghq"
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 
 # to use ^A, ^E
@@ -207,15 +207,8 @@ if [ -x "`which peco 2>/dev/null`" ]; then
   alias gc='git checkout $(git --no-pager branch | peco)'
 
   if [ -x "`which ghq 2>/dev/null`" ]; then
-    function gg() {
-      dst=$(ghq list --full-path | grep $GOPATH | cut -d "/" -f 6,7,8 | peco)
-      if [ ${dst} ]; then
-        cd $GOPATH/src/$dst
-      fi
-    }
-
     function g() {
-      dst=$(ghq list --full-path | grep -v $GOPATH | cut -d "/" -f 5,6,7 | peco)
+      dst=$(ghq list --full-path | cut -d "/" -f 5,6,7 | peco)
       if [ ${dst} ]; then
         cd $(ghq root)/$dst
       fi
