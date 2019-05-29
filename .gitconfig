@@ -1,6 +1,6 @@
 [user]
   name = Yu YAGIHASHI
-  email = yagihashoooooo@gmail.com
+  email = yagihash@xss.moe
 [core]
   pager = less -cmR
   excludesfile = /Users/yagihash/.gitignore_global
