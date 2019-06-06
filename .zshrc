@@ -6,6 +6,12 @@ export LESS="-iMS -R"
 export GOPATH="$HOME/go"
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 
+# export user agent strings
+export CHROME="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+export FIREFOX="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:65.0) Gecko/20100101 Firefox/65.0"
+export EDGE="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36 Edge/15.15063"
+export IE="Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"
+
 # to use ^A, ^E
 bindkey -e
 
