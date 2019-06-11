@@ -97,6 +97,7 @@ bindkey "^N" history-beginning-search-forward-end
 bindkey "^R" history-incremental-search-backward
 
 # setting suffix aliases
+alias -s go="go run"
 alias -s py=python
 alias -s rb=ruby
 alias -s php=php
