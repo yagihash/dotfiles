@@ -19,7 +19,6 @@ if dein#load_state(s:dein_dir)
 
   let s:toml_dir = expand('~/dotfiles/config/dein')
   call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
-  call dein#load_toml(s:toml_dir . '/dein-lazy.toml', {'lazy': 1})
 
   call dein#end()
   call dein#save_state()
@@ -63,8 +62,9 @@ let g:lightline = {
 let g:vue_disable_pre_processors=1
 
 " supress error messages for vim-go
-let g:go_version_warning = 0
-let g:go_fmt_command = "goimports"
+" let g:go_version_warning = 0
+" let g:go_fmt_command = "goimports"
+let g:go_null_module_warning = 0
 
 set encoding=utf-8
 set fenc=utf-8
