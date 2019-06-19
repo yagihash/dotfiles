@@ -1,3 +1,5 @@
+let mapleader = "\<Space>"
+
 " for dein
 if &compatible
   set nocompatible
@@ -113,3 +115,12 @@ set autoread
 au CursorMoved * checktime
 au InsertEnter * checktime
 
+" vim-go configs
+let g:go_fmt_command = "goimports"
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet']
+au FileType go nmap <silent> <leader>r <Plug>(go-run)
+au FileType go nmap <silent> <leader>v <Plug>(go-def-vertical)
+au FileType go nmap <silent> <leader>t :GoAddTags<CR>
+au FileType go nmap <silent> <leader>f :GoFillStruct<CR>
+au FileType go nmap <silent> <leader>i :GoIfErr<CR>
