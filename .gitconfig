@@ -13,12 +13,12 @@
   autosetuprebase = always
 [merge]
   ff = false
-	tool = vimdiff
+  tool = vimdiff
 [pull]
   rebase = true
 [diff]
   colorMoved = zebra
-	tool = vimdiff
+  tool = vimdiff
 [alias]
   s = status
   l = log --oneline
@@ -35,6 +35,6 @@
 [ghq]
   root = ~/go/src
 [difftool]
-	prompt = false
+  prompt = false
 [mergetool]
-	prompt = false
+  prompt = false
