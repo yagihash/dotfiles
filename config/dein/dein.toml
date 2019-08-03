@@ -30,9 +30,6 @@ on_ft = ['vue']
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
-repo = 'editorconfig/editorconfig-vim'
-
-[[plugins]]
 repo = 'jparise/vim-graphql'
 on_ft = ['graphql', 'graphqls', '.gql']
 
