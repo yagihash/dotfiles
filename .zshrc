@@ -215,9 +215,9 @@ fi
 
 if [ -x "`which starship 2>/dev/null`" ]; then
   eval "$(starship init zsh)"
-elif [ test `uname` = "Darwin" ]; then
+elif [ `uname` = "Darwin" ]; then
   echo -n "ok?(y/N): "; (read -q; echo) && brew install starship || echo skip
-elif [ test `uname` = "Linux" ]; then
+elif [ `uname` = "Linux" ]; then
   curl 'https://github.com/starship/starship/releases/download/v0.16.0/starship-v0.16.0-x86_64-unknown-linux-gnu.tar.gz' -o /tmp/starship.tar.gz
   tar zft /tmp/starship.tar.gz x86_64-unknown-linux-gnu/starship
   mkdir -p $HOME/bin
