@@ -9,6 +9,12 @@ if [ $? = 0 ]; then
   do
     ln -sfvn $f ~/`basename $f`
   done
+
+  mkdir -p ~/.config
+  for f in `find ~/dotfiles/.config -maxdepth 1 -name "*"`
+  do
+    ln -sfvn $f ~/.config/`basename $f`
+  done
 else
   echo リポジトリのクローンに失敗しました。
 fi
