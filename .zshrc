@@ -5,6 +5,7 @@ export PAGER="less"
 export LESS="-iMS -R"
 export GOPATH="$HOME/go"
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
+export PATH="$PATH:$HOME/bin"
 
 # export user agent strings
 export CHROME="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
@@ -53,21 +54,7 @@ zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' stagedstr "%F{yellow}"
 zstyle ':vcs_info:git:*' unstagedstr "%F{red}"
 zstyle ':vcs_info:git:*' untrackedstr "%F{red}"
-print_cwd() {
-  print
-  local left='(%{\e[38;5;2m%}%~%{\e[m%})'
-  vcs_info
-  local right="${vcs_info_msg_0_}"
-  local invisible='%([BSUbfksu]|([FK]|){*})'
-  local leftwidth=${#${(S%%)left//$~invisible/}}
-  local rightwidth=${#${(S%%)right//$~invisible/}}
-  local padwidth=$(($COLUMNS - ($leftwidth + $rightwidth) % $COLUMNS))
-  print -P $left${(r:$padwidth:: :)}$right
-}
-autoload -Uz add-zsh-hook
-add-zsh-hook precmd print_cwd
 
-# set prompts
 autoload colors
 colors
 RPROMPT="%F{green}%D{%m/%d} %*%f"
@@ -226,30 +213,14 @@ if [ -x "`which peco 2>/dev/null`" ]; then
   fi
 fi
 
-# if [ -x "`which tmux 2>/dev/null`" -a -x "`which peco 2>/dev/null`" ]; then
-# 	if [[ ! -n $TMUX && $- == *l* ]]; then
-#   	# get the IDs
-#   	ID="`tmux list-sessions`"
-#   	if [[ -z "$ID" ]]; then
-#     	tmux new-session
-#   	fi
-#   	create_new_session="Create New Session"
-#   	ID="$ID\n${create_new_session}:"
-#   	ID="`echo $ID | peco | cut -d: -f1`"
-#   	if [[ "$ID" = "${create_new_session}" ]]; then
-#     	tmux new-session
-# 		elif [[ -n "$ID" ]]; then
-# 			tmux attach-session -t "$ID"
-#   	else
-#     	:  # Start terminal normally
-#   	fi
-# 	fi
-# fi
-
-# for zprof
-## Add line below to ~/.zshenv
-## zmodload zsh/zprof && zprof
-# if (which zprof > /dev/null) ;then
-#   zprof | less
-# fi
-
+if [ -x "`which starship 2>/dev/null`" ]; then
+  eval "$(starship init zsh)"
+elif [ test `uname` = "Darwin" ]; then
+  echo -n "ok?(y/N): "; (read -q; echo) && brew install starship || echo skip
+elif [ test `uname` = "Linux" ]; then
+  curl 'https://github.com/starship/starship/releases/download/v0.16.0/starship-v0.16.0-x86_64-unknown-linux-gnu.tar.gz' -o /tmp/starship.tar.gz
+  tar zft /tmp/starship.tar.gz x86_64-unknown-linux-gnu/starship
+  mkdir -p $HOME/bin
+  mv starship $HOME/bin/starship
+  eval "$(starship init zsh)"
+fi
