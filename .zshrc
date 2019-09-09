@@ -219,9 +219,9 @@ elif [ `uname` = "Darwin" ]; then
   echo -n "ok?(y/N): "; (read -q; echo) && brew install starship || echo skip
 elif [ `uname` = "Linux" ]; then
   curl -L 'https://github.com/starship/starship/releases/download/v0.16.0/starship-v0.16.0-x86_64-unknown-linux-gnu.tar.gz' -o /tmp/starship.tar.gz
-  tar zft /tmp/starship.tar.gz x86_64-unknown-linux-gnu/starship
+  tar zfx /tmp/starship.tar.gz x86_64-unknown-linux-gnu/starship
   mkdir -p $HOME/bin
-  mv starship $HOME/bin/starship
+  mv x86_64-unknown-linux-gnu/starship $HOME/bin/starship
   eval "$(starship init zsh)"
   rm -rf /tmp/starship.tar.gz x86_64-unknown-linux-gnu
 fi
