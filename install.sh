@@ -5,7 +5,7 @@ else
 fi
 
 if [ $? = 0 ]; then
-  for f in `find ~/dotfiles -maxdepth 1 -name ".*" | grep -v '.git$' | grep -v '.gitignore$'`
+  for f in `find ~/dotfiles -maxdepth 1 -name ".*" | grep -v '.git$' | grep -v '.gitignore$' | grep -v '.config$'`
   do
     ln -sfvn $f ~/`basename $f`
   done
