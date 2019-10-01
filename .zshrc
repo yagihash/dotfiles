@@ -199,7 +199,7 @@ if [ -x "`which peco 2>/dev/null`" ]; then
   }
   alias d='peco-cd'
 
-  alias gc='git checkout $(git --no-pager branch | peco)'
+  alias gs='git switch $(git --no-pager branch | peco)'
 
   if [ -x "`which ghq 2>/dev/null`" ]; then
     function g() {
