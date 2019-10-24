@@ -213,6 +213,21 @@ if [ -x "`which peco 2>/dev/null`" ]; then
   fi
 fi
 
+if [ `uname` = "Darwin" ]; then
+  if [ -x "`which nyan 2>/dev/null`" ]; then
+    alias cat="nyan -t monokai"
+  else
+    echo -n "install nyan?(y/N): "
+    if read -q; then
+      echo
+      brew install nyan && alias cat="nyan -t monokai"
+    else
+      echo
+      echo skip
+    fi
+  fi
+fi
+
 if [ -x "`which starship 2>/dev/null`" ]; then
   eval "$(starship init zsh)"
 elif [ `uname` = "Darwin" ]; then
