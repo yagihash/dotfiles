@@ -20,6 +20,7 @@
   colorMoved = zebra
   tool = vimdiff
 [alias]
+  p = pull
   s = status
   f = fetch --prune
   l = log --oneline
