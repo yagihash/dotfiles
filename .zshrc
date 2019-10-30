@@ -74,7 +74,7 @@ esac
 
 # history management settings
 export HISTFILE=~/.zsh_history
-export HISTSIZE=1000
+export HISTSIZE=100000
 export SAVEHIST=100000
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
