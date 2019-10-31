@@ -168,7 +168,7 @@ setopt auto_pushd
 
 if [ -x "`which peco 2>/dev/null`" ]; then
   function peco-history-selection() {
-    BUFFER="$(history -nr 1 | awk '!a[$0]++' | peco --query "$LBUFFER" | sed 's/\\n/\n/')"
+    BUFFER="$(history -nr 1 | awk '!a[$0]++' | peco --query "$LBUFFER" | sed 's/\\n/ /')"
     CURSOR=$#BUFFER
     zle reset-prompt
   }
