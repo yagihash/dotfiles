@@ -220,7 +220,7 @@ if [ `uname` = "Darwin" ]; then
     echo -n "install nyan?(y/N): "
     if read -q; then
       echo
-      brew install nyan && alias cat="nyan -t monokai"
+      brew install toshimaru/nyan/nyan && alias cat="nyan -t monokai"
     else
       echo
       echo skip
