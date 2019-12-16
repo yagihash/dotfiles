@@ -156,9 +156,6 @@ zstyle ':completion:*' ignore-parents parent pwd ..
 # set deletion on the left
 bindkey '^U' backward-kill-line
 
-# load local settings
-source ~/.zshrc.mine
-
 # configucation for developing environment
 export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH=$PATH:./node_modules/.bin
@@ -247,3 +244,6 @@ elif [ `uname` = "Linux" ]; then
   eval "$(starship init zsh)"
   rm -rf /tmp/starship.tar.gz x86_64-unknown-linux-gnu
 fi
+
+# load local settings
+source ~/.zshrc.local
