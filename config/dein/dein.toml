@@ -48,3 +48,8 @@ on_ft = ['pac', 'html', 'twig', 'php', 'js']
 [[plugins]]
 repo = 'alampros/vim-styled-jsx'
 on_ft = ['jsx']
+
+[[plugins]]
+repo = 'hashivim/vim-terraform'
+on_ft = ['tf', 'tfvars', 'tfstate']
+

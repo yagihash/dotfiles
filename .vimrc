@@ -124,3 +124,8 @@ au FileType go nmap <silent> <leader>v <Plug>(go-def-vertical)
 au FileType go nmap <silent> <leader>t :GoAddTags<CR>
 au FileType go nmap <silent> <leader>f :GoFillStruct<CR>
 au FileType go nmap <silent> <leader>i :GoIfErr<CR>
+
+" vim-terraform configs
+let g:terraform_fmt_on_save = 1
+
+
