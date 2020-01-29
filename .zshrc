@@ -208,6 +208,8 @@ if [ -x "`which peco 2>/dev/null`" ]; then
 
     alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
   fi
+
+  alias gcfg='gcloud config configurations activate `gcloud config configurations list --format="json" | jq -r ".[].name" | peco`'
 fi
 
 if [ `uname` = "Darwin" ]; then
