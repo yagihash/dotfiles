@@ -1,6 +1,7 @@
 [user]
   name = Yu YAGIHASHI
-  email = yagihash@xss.moe
+  email = yagihash@mercari.com
+	signingkey = CB37FA113D32777C
 [core]
   pager = less -cmR
   excludesfile = /Users/yagihash/.gitignore_global
@@ -40,3 +41,7 @@
   prompt = false
 [mergetool]
   prompt = false
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true
