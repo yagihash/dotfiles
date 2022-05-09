@@ -1,7 +1,7 @@
 [user]
   name = Yu YAGIHASHI
   email = yagihash@mercari.com
-	signingkey = CB37FA113D32777C
+	signingkey = C62B7DB49DCFF23B
 [core]
   pager = less -cmR
   excludesfile = /Users/yagihash/.gitignore_global

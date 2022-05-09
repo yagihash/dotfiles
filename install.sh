@@ -5,10 +5,12 @@ else
 fi
 
 if [ $? = 0 ]; then
-  for f in `find ~/dotfiles -maxdepth 1 -name ".*" | grep -v '.git$' | grep -v '.gitignore$' | grep -v '.config$'`
+  for f in `find ~/dotfiles -type f -maxdepth 1 -name ".*"`
   do
     ln -sfvn $f ~/`basename $f`
   done
+
+  ln -sfvn ~/dotfiles/.vim ~/.vim
 
   mkdir -p ~/.config
   for f in `find ~/dotfiles/.config -maxdepth 1 -name "*"`

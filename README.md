@@ -1,4 +1,4 @@
 # dotfiles
 ```
-curl -L dot.sqli.moe | bash
+curl https://raw.githubusercontent.com/yagihash/dotfiles/master/install.sh | bash
 ```
