@@ -1,6 +1,5 @@
 [[plugins]]
 repo = 'fatih/vim-go'
-rev = 'v1.20'
 on_ft = ['go']
 
 [[plugins]]
