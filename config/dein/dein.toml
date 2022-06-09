@@ -52,3 +52,6 @@ on_ft = ['jsx']
 repo = 'hashivim/vim-terraform'
 on_ft = ['tf', 'tfvars', 'tfstate']
 
+[[plugins]]
+repo = 'rhysd/vim-clang-format'
+on_nft = ['proto']
