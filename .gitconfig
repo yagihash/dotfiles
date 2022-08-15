@@ -10,6 +10,7 @@
   ui = auto
 [push]
   default = current
+  autoSetupRemote = true
 [branch]
   autosetuprebase = always
 [merge]
