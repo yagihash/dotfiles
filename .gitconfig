@@ -1,10 +1,9 @@
 [user]
   name = Yu YAGIHASHI
-  email = yagihash@mercari.com
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC4Vi6lz4h6rVqykIQ7onCQ0LTqqNMmKT4FvNeHNcC7E yagihash@pc996.local
+  email = yagihash@ssrf.dev
 [core]
   pager = less -cmR
-  excludesfile = /Users/yagihash/.gitignore_global
+  excludesfile = ~/.gitignore_global
   editor = vim
 [color]
   ui = auto
@@ -42,7 +41,5 @@
   prompt = false
 [mergetool]
   prompt = false
-[gpg]
-  format = ssh
-[commit]
-  gpgsign = true
+[include]
+  path = ~/.gitconfig.local
