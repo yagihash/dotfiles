@@ -43,3 +43,7 @@
   prompt = false
 [include]
   path = ~/.gitconfig.local
+[gpg]
+  format = ssh
+[commit]
+  gpgsign = true
