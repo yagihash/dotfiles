@@ -1,5 +1,6 @@
 .DS_Store
 .env
+.envrc
 .idea/
 node_modules/
 vendor/
