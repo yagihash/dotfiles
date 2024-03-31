@@ -11,6 +11,7 @@ if [ $? = 0 ]; then
   done
 
   ln -sfvn ~/dotfiles/.vim ~/.vim
+  ln -sfvn ~/dotfiles/.peco ~/.peco
 
   mkdir -p ~/.config
   for f in `find ~/dotfiles/.config -maxdepth 1 -name "*"`
