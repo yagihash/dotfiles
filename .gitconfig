@@ -1,6 +1,7 @@
 [user]
   name = Yu YAGIHASHI
   email = yagihash@ssrf.dev
+	signingkey = /Users/yagihash/.ssh/id_ed25519.pub
 [core]
   pager = less -cmR
   excludesfile = ~/.gitignore_global
