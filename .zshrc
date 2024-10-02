@@ -165,12 +165,13 @@ setopt auto_pushd
 
 if [ -x "`which peco 2>/dev/null`" ]; then
   function peco-history-selection() {
-    BUFFER="$(history -nr 1 | awk '!a[$0]++' | peco --query "$LBUFFER" | sed 's/\\n/ /')"
+    beep
+    BUFFER="$(\history -nr 1 | awk '!a[$0]++' | peco --query "$LBUFFER" | sed 's/\\n/ /')"
     CURSOR=$#BUFFER
     zle reset-prompt
   }
   zle -N peco-history-selection
-  bindkey '^R' peco-history-selection
+  bindkey '^r' peco-history-selection
 
   function peco-pushd-selection() {
     local pushd_number=$(dirs -v | peco | perl -anE 'say $F[0]')

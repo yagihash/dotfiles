@@ -128,4 +128,4 @@ au FileType go nmap <silent> <leader>i :GoIfErr<CR>
 " vim-terraform configs
 let g:terraform_fmt_on_save = 1
 
-
+set re=0
