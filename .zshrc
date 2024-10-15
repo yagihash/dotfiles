@@ -207,7 +207,7 @@ if [ -x "`which peco 2>/dev/null`" ]; then
       fi
     }
 
-    alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
+    # alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
   fi
 
   alias gcfg='gcloud config configurations activate `gcloud config configurations list --format="json" | jq -r ".[].name" | peco` && gcloud auth application-default login '
