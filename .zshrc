@@ -17,7 +17,7 @@ export IE="Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
 bindkey -e
 
 # enable completions
-autoload -U compinit; compinit -C
+autoload -Uz compinit && compinit
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export LS_COLORS="di=36:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30"
 zstyle ":completion:*" list-colors "di=36" "ln=35" "so=32" "ex=31" "bd=46;34" "cd=43;34"
