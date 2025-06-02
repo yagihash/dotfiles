@@ -163,6 +163,10 @@ export PATH=$PATH:./node_modules/.bin
 DIRSTACKSIZE=100
 setopt auto_pushd
 
+# load local settings
+source ~/.zshrc.local
+
+# you may use brew here
 if [ -x "`which peco 2>/dev/null`" ]; then
   function peco-history-selection() {
     beep
@@ -248,5 +252,3 @@ elif [ `uname` = "Linux" ]; then
   rm -rf /tmp/starship.tar.gz x86_64-unknown-linux-gnu
 fi
 
-# load local settings
-source ~/.zshrc.local
