@@ -252,3 +252,6 @@ elif [ `uname` = "Linux" ]; then
   rm -rf /tmp/starship.tar.gz x86_64-unknown-linux-gnu
 fi
 
+if [ -x "`which gh 2>/dev/null`" ]; then
+  alias gpr="gh pr view --web"
+fi
