@@ -1,0 +1,3 @@
+[tasks.hello]
+description = "sample command"
+run = "echo hello"
