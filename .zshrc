@@ -255,3 +255,7 @@ fi
 if [ -x "`which gh 2>/dev/null`" ]; then
   alias gpr="gh pr view --web"
 fi
+
+if [ -x "`which mise 2>/dev/null`" ]; then
+  alias m="mise run"
+fi
