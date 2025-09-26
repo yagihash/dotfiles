@@ -2,3 +2,6 @@
 description = "sample command"
 run = "echo hello"
 
+[tasks.git-clean-up]
+description = 'clean up git repo'
+run = 'git p && git f && git tidy'
